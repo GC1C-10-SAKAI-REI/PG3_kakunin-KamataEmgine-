@@ -1,6 +1,7 @@
-#define WINDOW_WIDTH 1280 //ウィンドウの幅
-#define WINDOW_HEIGHT 720 //ウィンドウの高さ
-#include <Novice.h>
+#define WINDOW_WIDTH 1280//ウィンドウの幅
+#define WINDOW_HEIGHT 720//ウィンドウの高さ
+
+#include "Player.h"
 
 const char kWindowTitle[] = "GC2C_07_サカイレイ";
 
@@ -11,8 +12,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	Novice::Initialize(kWindowTitle, WINDOW_WIDTH, WINDOW_HEIGHT);
 
 	// キー入力結果を受け取る箱
-	char keys[256] = {0};
-	char preKeys[256] = {0};
+	char keys[256] = { 0 };
+	char preKeys[256] = { 0 };
+
+	Player* player = new Player(32.0f, 5.0f, WHITE);
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0)
@@ -25,18 +28,19 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		Novice::GetHitKeyStateAll(keys);
 
 		/// ↓更新処理ここから
-		
 
-		
+		player->Update(keys, preKeys);
+
 		/// ↑更新処理ここまで
-		
 
-		
+
+
 		/// ↓描画処理ここから
-		
 
-		
-		/// ↑描画処理ここまで		
+		player->Draw();
+
+		/// ↑描画処理ここまで
+
 
 		// フレームの終了
 		Novice::EndFrame();
@@ -47,7 +51,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 			break;
 		}
 	}
-
 	// ライブラリの終了
 	Novice::Finalize();
 	return 0;

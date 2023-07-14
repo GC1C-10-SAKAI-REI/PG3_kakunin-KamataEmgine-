@@ -6,16 +6,16 @@
 class FuncLib
 {
 public:
-	//³•ûŒ`•`‰æ
+	//æ­£æ–¹å½¢æç”»
 	void DrawSquare(float posX, float posY, float size, unsigned int color);
-	//‰~•`‰æ
+	//å††æç”»
 	void DrawCircle(float posX, float posY, float rad, unsigned int color);
-	//’l–³‚µ‚ÌƒRƒƒ“ƒg
+	//å€¤ç„¡ã—ã®ã‚³ãƒ¡ãƒ³ãƒˆ
 	void ScrPrintf(int x, int y, const char* comment);
-	//’l—L‚è‚ÌƒRƒƒ“ƒg(intŒ^)
+	//å€¤æœ‰ã‚Šã®ã‚³ãƒ¡ãƒ³ãƒˆ(intå‹)
 	void ScrDPrintf(int x, int y, const char* comment, int data);
-	//’l—L‚è‚ÌƒRƒƒ“ƒg(floatŒ^)
+	//å€¤æœ‰ã‚Šã®ã‚³ãƒ¡ãƒ³ãƒˆ(floatå‹)
 	void ScrFPrintf(int x, int y, const char* comment, float data);
-	//ˆÚ“®ŠÖ”
-	void Move(char* keys, char* prekeys, Vec2& center, Vec2& velocity, float spd);
+	//ç§»å‹•é–¢æ•°
+	void Move(char* keys, Vec2& center, Vec2& velocity, float spd);
 };

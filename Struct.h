@@ -6,11 +6,11 @@ typedef struct Vec2
 	float Y;
 } Vec2;
 
-typedef struct Object
+typedef struct ObjectInfo
 {
 	Vec2 Center;
 	Vec2 Velocity;
 	float Rad;
 	float Spd;
 	unsigned int Color;
-} Object;
+} ObjectInfo;

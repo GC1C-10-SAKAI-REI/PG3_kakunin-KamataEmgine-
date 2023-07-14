@@ -4,10 +4,10 @@
 class Object
 {
 protected:
-	//継承先で共有するもの
+	//邯呎価蜈医〒蜈ｱ譛峨☆繧九ｂ縺ｮ
 	ObjectInfo objInfo;
 
 public:
-	//ゲッター
+	//繧ｲ繝�繧ｿ繝ｼ
 	ObjectInfo GetObjInfo() { return objInfo; }
 };

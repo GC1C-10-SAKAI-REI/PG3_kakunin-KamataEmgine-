@@ -2,12 +2,12 @@
 
 void FuncLib::DrawSquare(float posX, float posY, float size, unsigned int color)
 {
-	Novice::DrawBox(posX - size, posY - size, size * 2, size * 2, 0, color, kFillModeSolid);
+	Novice::DrawBox(int(posX - size), int(posY - size), int(size * 2), int(size * 2), 0, color, kFillModeSolid);
 }
 
 void FuncLib::DrawCircle(float posX, float posY, float rad, unsigned int color)
 {
-	Novice::DrawEllipse(posX, posY, rad, rad, 0, color, kFillModeSolid);
+	Novice::DrawEllipse(int(posX), int(posY), int(rad), int(rad), 0, color, kFillModeSolid);
 }
 
 void FuncLib::ScrPrintf(int x, int y, const char* comment)
@@ -25,7 +25,7 @@ void FuncLib::ScrFPrintf(int x, int y, const char* comment, float data)
 	Novice::ScreenPrintf(x, y, "%s = %f", comment, data);
 }
 
-void FuncLib::Move(char* keys, char* prekeys, Vec2& center, Vec2& velocity, float spd)
+void FuncLib::Move(char* keys, Vec2& center, Vec2& velocity, float spd)
 {
 	velocity.X = 0;
 	velocity.Y = 0;
@@ -47,22 +47,22 @@ void FuncLib::Move(char* keys, char* prekeys, Vec2& center, Vec2& velocity, floa
 		velocity.X = 1;
 	}
 
-	//³‹K‰»
+	//æ­£è¦åŒ–
 	if (velocity.X != 0.0f || velocity.Y != 0.0f)
 	{
-		//³‹K‰»—p‚Ì•Ï”
+		//æ­£è¦åŒ–ç”¨ã®å¤‰æ•°
 		float length;
 		length = sqrtf(velocity.X * velocity.X + velocity.Y * velocity.Y);
 
-		//³‹K‰»
+		//æ­£è¦åŒ–
 		float normal_X = velocity.X / length;
 		float normal_Y = velocity.Y / length;
 
-		//‚µ‚½‚â‚Â‚ğspd‚É‚©‚¯‚é
+		//ã—ãŸã‚„ã¤ã‚’spdã«ã‹ã‘ã‚‹
 		normal_X *= spd;
 		normal_Y *= spd;
 
-		//À•W‚É‘«‚·
+		//åº§æ¨™ã«è¶³ã™
 		center.X += normal_X;
 		center.Y += normal_Y;
 	}

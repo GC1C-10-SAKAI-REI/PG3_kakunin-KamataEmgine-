@@ -3,13 +3,14 @@
 
 class Player
 {
-public:
+private:
 	/*---メンバ変数---*/
 	Object _player;						//自機
 	static const int _magazine = 10;	//弾数
-	Bullet *_bullet[_magazine];			//弾
+	Bullet* _bullet[_magazine];			//弾
 	FuncLib _funcLib;					//自作関数ライブラリ
 
+public:
 	/*---メンバ関数---*/
 	//コンストラクタ
 	Player(float rad, float spd, unsigned int color);

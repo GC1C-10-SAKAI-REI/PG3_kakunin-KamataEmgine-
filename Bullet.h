@@ -3,12 +3,13 @@
 
 class Bullet
 {
-public:
+private:
 	/*---メンバ変数---*/
 	Object _bullet;			//弾
 	FuncLib _funcLib;		//自作関数ライブラリ
 	bool _isShot;			//発射フラグ
 
+public:
 	/*---メンバ関数---*/
 	Bullet(float spd, bool isShot);
 	~Bullet();

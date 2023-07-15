@@ -15,7 +15,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	char keys[256] = { 0 };
 	char preKeys[256] = { 0 };
 
-	Player* player = new Player(32.0f, 5.0f, WHITE);
+	Player* player = new Player(32.0f, 6.0f, WHITE);
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0)

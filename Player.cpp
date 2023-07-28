@@ -21,6 +21,9 @@ Player::~Player()
 void Player::Update(char *keys)
 {
 	fLib_->Move(keys, objInfo.Center, objInfo.Velocity, objInfo.Spd);
+
+	fLib_->ScrFPrintf(0, 0, "obj.X = ", GetObjX());
+	fLib_->ScrFPrintf(0, 20, "obj.Y = ", GetObjY());
 }
 
 void Player::Draw()

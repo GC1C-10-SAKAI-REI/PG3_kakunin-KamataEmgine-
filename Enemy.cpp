@@ -36,6 +36,5 @@ void Enemy::Update()
 
 void Enemy::Draw()
 {
-	fLib_->ScrFPrintf(0, 0, "VecX", objInfo.Velocity.X);
 	fLib_->DrawCircle(objInfo.Center.X, objInfo.Center.Y, objInfo.Rad, objInfo.Color);
 }

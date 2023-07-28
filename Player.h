@@ -11,4 +11,5 @@ public:
 	~Player();
 	void Update(char *keys);
 	void Draw();
+
 };

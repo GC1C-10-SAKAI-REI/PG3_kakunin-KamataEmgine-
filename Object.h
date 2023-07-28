@@ -9,5 +9,6 @@ protected:
 
 public:
 	//ゲッター
-	ObjectInfo GetObjInfo() { return objInfo; }
+	float GetObjX() { return objInfo.Center.X; }
+	float GetObjY() { return objInfo.Center.Y; }
 };
